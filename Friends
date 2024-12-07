@@ -1,0 +1,49 @@
+# WAP to input your friend names and their Phone Numbers and store them in the dictionary as the key-value pair. Perform The following 
+# operations on the dictionary:
+# a) Display the name and phone number of all your friends.
+# b) Add a new key-value pair in this dictionary and display the modified dictionary.
+# c) Delete a particular friend from the dictionary.
+# d) Modify the phone number of an existing friend.
+# e) Check if a friend is present in the dictionary or not.
+# f) Display the dictionary in sorted order of names.
+
+
+d={}
+n=int(input("Enter the Range: "))
+for i in range(n):
+    nm=input("Enter The Name: ")
+    no=int(input("Enter the Phone Number: "))
+    d[nm]=no
+
+print("Name with their Phone Numbers: ")     #(a)
+for i in d:
+     print(i,"=",d[i])      
+
+nmi=input("Input a Name to be added: ")
+noi=int(input("Enter the Phone Number: "))   #(b)
+d[nmi]=noi
+print("Modified Dictionary: ",d)
+
+dlt=input("Enter a name to be deleted: ")    #(c)
+if dlt in d:
+    del d[dlt]
+    print("Modified Dictionary: ",d)
+else:
+    print("No such Name Found!")    
+
+ph=input("Enter the name of the friend whoose Number is to be modified: ")    #(d)
+num=int(input("The Number: "))
+if ph in d:
+    d[ph]=num
+    print("Modified Dictionary: ",d)
+else:
+    print("No such Name found!")    
+
+nmf=input("Enter a name to be searched for: ")        #(e)
+if nmf in d:
+    print("The Friend is present!")
+else:
+    print(nmf," does not exist!")    
+
+print("Sorted Dictionary: ",sorted(d.items()))                            #(f)
+
